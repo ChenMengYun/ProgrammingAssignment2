@@ -1,10 +1,21 @@
-## Put comments here that give an overall description of what your
-## functions do
+## this function tries to speed the calculation of matrix inverse by cache
+## for any to be calculated matrix
+## the function first makes a judgement that whether the inverse has been calculated
+## if so the previously calculated inverse will be returned
+## otherwise it does the caculation
 
-## Write a short comment describing this function
+## this function creates a matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-
+ inv<-NULL
+ set<-function(y){
+   x<<-y
+   inv<<-NULL
+ }
+ get<-function() x
+ setinverse<-function(inverse)inv<<-inverse
+ getinverse<-function() inv
+ list(set=set,get=get,setinverse=setinverse,getinverse=getinverse)
 }
 
 
